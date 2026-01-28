@@ -10,7 +10,7 @@ const createInstance = (cardId: string): CardInstance => {
     return {
         ...def,
         instanceId: crypto.randomUUID(),
-        canAttack: false,
+        canAttack: true,
         faceUp: true,
         currentAttack: def.attack,
         currentDefense: def.defense,
@@ -227,7 +227,7 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
                 newHand.splice(cardIndex, 1);
 
                 const newMonsters = [...p.field.monsters];
-                newMonsters[slotIndex] = { ...card, canAttack: false };
+                newMonsters[slotIndex] = { ...card, canAttack: true }; // Enable "Haste" for better UX
 
                 return {
                     players: {
