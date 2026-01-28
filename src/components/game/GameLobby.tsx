@@ -2,11 +2,17 @@
 
 import { useState } from 'react';
 import { useGameStore } from '@/store/game-store';
+import Link from 'next/link';
+
+import { useDeckStore } from '@/store/deck-store';
 
 export const GameLobby = () => {
     const initializeGame = useGameStore(state => state.initializeGame);
     const setRoomId = useGameStore(state => state.setRoomId);
     const setClientPlayerId = useGameStore(state => state.setClientPlayerId);
+
+    // Read user deck
+    const customDeck = useDeckStore(state => state.deck);
 
     // Local state for form
     const [name, setName] = useState('Player');
@@ -21,7 +27,17 @@ export const GameLobby = () => {
 
         // In P2P sync, only the host (p1 usually) should init, or we rely on sync.
         // For MVP, we re-init.
-        initializeGame(name, 'Opponent');
+        // Pass custom deck ONLY if we are P1 (Host) or if we want local override.
+        // For MVP: Both players init local state. P1 uses their deck. P2 uses default (since P2 sends their state remote).
+        // Actually, if I am P1, I use my deck. If I am P2, I use my deck?
+        // Limitation: Currently only ONE deck array is in store for initialization logic.
+        // We will pass customDeck. The store logic assigns it to P1.
+        // If I am P2, and I play "as P2", the store logic currently assigns P1 deck to P1 and P2 deck to P2.
+        // Wait, store init code: "const p1 = ... deck: p1Deck".
+        // We need to know WHICH player I am to assign MY deck to MY player slot.
+        // But initializeGame resets BOTH players.
+
+        initializeGame(name, 'Opponent', customDeck, asPlayer);
 
         setJoined(true);
     };
@@ -68,6 +84,10 @@ export const GameLobby = () => {
                             Join as Player 2
                         </button>
                     </div>
+
+                    <Link href="/deck" className="block w-full text-center mt-3 bg-slate-800 hover:bg-slate-700 text-purple-300 py-2 rounded transition-colors text-sm font-bold">
+                        🎴 Edit Deck
+                    </Link>
 
                     <p className="text-xs text-center text-slate-500 mt-4">
                         Ensure you pick different slots!

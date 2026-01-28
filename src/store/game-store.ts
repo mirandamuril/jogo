@@ -18,7 +18,7 @@ const createInstance = (cardId: string): CardInstance => {
 };
 
 interface GameActions {
-    initializeGame: (p1Name: string, p2Name: string) => void;
+    initializeGame: (p1Name: string, p2Name: string, customDeck?: string[], customDeckPlayerId?: string) => void;
     nextPhase: (options?: { isRemote?: boolean }) => void;
     drawCard: (playerId: string) => void;
     playCard: (playerId: string, cardInstanceId: string, slotIndex: number, options?: { isRemote?: boolean }) => void;
@@ -57,7 +57,20 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
     setClientPlayerId: (id) => set({ clientPlayerId: id }),
     setBroadcaster: (fn) => set({ broadcaster: fn }),
 
-    initializeGame: (p1Name, p2Name) => {
+    initializeGame: (p1Name, p2Name, customDeck, customDeckPlayerId = 'p1') => {
+
+        let p1Deck = shuffle(STARTING_DECK);
+        let p2Deck = shuffle(STARTING_DECK); // Default MVP: Opponent uses random deck if not synced
+
+        if (customDeck && customDeck.length > 0) {
+            const playerDeck = shuffle(customDeck);
+            if (customDeckPlayerId === 'p1') {
+                p1Deck = playerDeck;
+            } else {
+                p2Deck = playerDeck;
+            }
+        }
+
         const p1: Player = {
             id: 'p1',
             name: p1Name,
@@ -66,7 +79,7 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
             mana: 1,
             maxMana: 1,
             hand: [],
-            deck: shuffle(STARTING_DECK),
+            deck: p1Deck,
             graveyard: [],
             field: { monsters: Array(5).fill(null), spells: Array(5).fill(null) }
         };
@@ -79,7 +92,7 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
             mana: 1,
             maxMana: 1,
             hand: [],
-            deck: shuffle(STARTING_DECK),
+            deck: p2Deck, // Uses custom if initialized as P2
             graveyard: [],
             field: { monsters: Array(5).fill(null), spells: Array(5).fill(null) }
         };
