@@ -1,6 +1,6 @@
 'use client';
 
-import { Stage, Container, Text, Graphics } from '@pixi/react';
+import { Stage, Container, Text, Graphics, Sprite } from '@pixi/react';
 import { useGameStore } from '@/store/game-store';
 import { useEffect, useState } from 'react';
 import { TextStyle } from 'pixi.js';
@@ -310,6 +310,14 @@ const CardSprite = ({ card, x, y, location, ownerId, slotIndex, isHidden }: Card
                     g.drawRoundedRect(5, 110, width - 10, 25, 4);
                     g.endFill();
                 }}
+            />
+
+            <Sprite
+                image={card.image}
+                x={8}
+                y={30}
+                width={width - 16}
+                height={60}
             />
 
             <Text
