@@ -1,0 +1,117 @@
+[
+    {
+        "id": "c001",
+        "name": "Ether Wisp",
+        "type": "monster",
+        "element": "ether",
+        "cost": 1,
+        "attack": 500,
+        "defense": 400,
+        "description": "A small fragment of pure energy. When destroyed, draw 1 card.",
+        "image": "/assets/cards/ether_wisp.png",
+        "rarity": "common",
+        "subType": "Ethereal Entity"
+    },
+    {
+        "id": "c002",
+        "name": "Gust Sylph",
+        "type": "monster",
+        "element": "air",
+        "cost": 2,
+        "attack": 1200,
+        "defense": 800,
+        "description": "Attacks directly if the opponent controls no Air monsters.",
+        "image": "/assets/cards/gust_sylph.png",
+        "rarity": "common",
+        "subType": "Fairy"
+    },
+    {
+        "id": "c003",
+        "name": "Solar Guardian",
+        "type": "monster",
+        "element": "light",
+        "cost": 4,
+        "attack": 2000,
+        "defense": 2200,
+        "description": "Taunt. Must be attacked first.",
+        "image": "/assets/cards/solar_guardian.png",
+        "rarity": "rare",
+        "subType": "Monsters"
+    },
+    {
+        "id": "c004",
+        "name": "Abyssal Shade",
+        "type": "monster",
+        "element": "dark",
+        "cost": 5,
+        "attack": 2400,
+        "defense": 1000,
+        "description": "When summoned, reduce an enemy monster's ATK by 500.",
+        "image": "/assets/cards/abyssal_shade.png",
+        "rarity": "epic",
+        "subType": "Monsters"
+    },
+    {
+        "id": "c005",
+        "name": "Inferno Drake",
+        "type": "monster",
+        "element": "fire",
+        "cost": 7,
+        "attack": 3000,
+        "defense": 2500,
+        "description": "Trample (Deal excess damage to player).",
+        "image": "/assets/cards/inferno_drake.png",
+        "rarity": "legendary",
+        "subType": "Monsters"
+    },
+    {
+        "id": "c006",
+        "name": "Mystic Shield",
+        "type": "spell",
+        "element": "ether",
+        "cost": 2,
+        "description": "Give a friendly monster +0/+1000 DEF until end of turn.",
+        "image": "/assets/cards/mystic_shield.png",
+        "rarity": "common"
+    },
+    {
+        "id": "c007",
+        "name": "Ether Blast",
+        "type": "spell",
+        "element": "ether",
+        "cost": 3,
+        "description": "Deal 1000 damage to an enemy monster.",
+        "image": "/assets/cards/ether_blast.png",
+        "rarity": "rare"
+    },
+    {
+        "id": "c008",
+        "name": "Void Snare",
+        "type": "trap",
+        "element": "dark",
+        "cost": 2,
+        "description": "Activate when opponent summons a monster: Destroy that monster.",
+        "image": "/assets/cards/void_snare.png",
+        "rarity": "rare"
+    },
+    {
+        "id": "c009",
+        "name": "Healing Light",
+        "type": "spell",
+        "element": "light",
+        "cost": 2,
+        "description": "Restore 2000 HP to your hero.",
+        "image": "/assets/cards/healing_light.png",
+        "rarity": "common"
+    },
+    {
+        "id": "c010",
+        "name": "Prismatic Prism",
+        "type": "support",
+        "element": "ether",
+        "cost": 3,
+        "description": "All your Ethereal Entities gain +300 ATK.",
+        "image": "/assets/cards/prismatic_prism.png",
+        "rarity": "epic"
+    }
+]
