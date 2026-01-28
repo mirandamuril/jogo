@@ -328,19 +328,36 @@ const CardSprite = ({ card, x, y, location, ownerId, slotIndex, isHidden }: Card
                 anchor={0.5}
             />
 
-            <Text
-                text={`ATK ${card.attack}\nDEF ${card.defense}`}
-                style={new TextStyle({
-                    fill: '#fab1a0',
-                    fontSize: 10,
-                    fontWeight: 'bold',
-                    align: 'center',
-                    lineHeight: 12
-                })}
-                x={width / 2}
-                y={122}
-                anchor={0.5}
-            />
+            {card.type === 'monster' && (
+                <Text
+                    text={`ATK ${card.attack}\nDEF ${card.defense}`}
+                    style={new TextStyle({
+                        fill: '#fab1a0',
+                        fontSize: 10,
+                        fontWeight: 'bold',
+                        align: 'center',
+                        lineHeight: 12
+                    })}
+                    x={width / 2}
+                    y={122}
+                    anchor={0.5}
+                />
+            )}
+
+            {card.type !== 'monster' && (
+                <Text
+                    text={`${card.type.toUpperCase()}`}
+                    style={new TextStyle({
+                        fill: '#a29bfe',
+                        fontSize: 10,
+                        fontWeight: 'bold',
+                        align: 'center'
+                    })}
+                    x={width / 2}
+                    y={122}
+                    anchor={0.5}
+                />
+            )}
 
             <Text
                 text={`${card.cost}`}

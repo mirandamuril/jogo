@@ -35,8 +35,8 @@
         "defense": 2200,
         "description": "Taunt. Must be attacked first.",
         "image": "/assets/cards/solar_guardian.png",
-        "rarity": "rare",
-        "subType": "Monsters"
+        "rarity": "common",
+        "subType": "Warrior"
     },
     {
         "id": "c004",
@@ -48,8 +48,8 @@
         "defense": 1000,
         "description": "When summoned, reduce an enemy monster's ATK by 500.",
         "image": "/assets/cards/abyssal_shade.png",
-        "rarity": "epic",
-        "subType": "Monsters"
+        "rarity": "rare",
+        "subType": "Demon"
     },
     {
         "id": "c005",
@@ -62,7 +62,7 @@
         "description": "Trample (Deal excess damage to player).",
         "image": "/assets/cards/inferno_drake.png",
         "rarity": "legendary",
-        "subType": "Monsters"
+        "subType": "Dragon"
     },
     {
         "id": "c006",
@@ -107,11 +107,126 @@
     {
         "id": "c010",
         "name": "Prismatic Prism",
-        "type": "support",
+        "type": "spell",
         "element": "ether",
         "cost": 3,
         "description": "All your Ethereal Entities gain +300 ATK.",
         "image": "/assets/cards/prismatic_prism.png",
         "rarity": "epic"
+    },
+    {
+        "id": "c011",
+        "name": "Storm Crow",
+        "type": "monster",
+        "element": "air",
+        "cost": 2,
+        "attack": 900,
+        "defense": 900,
+        "description": "Can attack twice per turn.",
+        "image": "/assets/cards/storm_crow.png",
+        "rarity": "common",
+        "subType": "Beast"
+    },
+    {
+        "id": "c012",
+        "name": "Magma Golem",
+        "type": "monster",
+        "element": "fire",
+        "cost": 5,
+        "attack": 2100,
+        "defense": 2800,
+        "description": "Cannot act the turn it is summoned.",
+        "image": "/assets/cards/magma_golem.png",
+        "rarity": "rare",
+        "subType": "Construct"
+    },
+    {
+        "id": "c013",
+        "name": "Crystal Keeper",
+        "type": "monster",
+        "element": "light",
+        "cost": 3,
+        "attack": 800,
+        "defense": 2000,
+        "description": "Your hero cannot take effect damage.",
+        "image": "/assets/cards/crystal_keeper.png",
+        "rarity": "common",
+        "subType": "Spellcaster"
+    },
+    {
+        "id": "c014",
+        "name": "Shadow Assassin",
+        "type": "monster",
+        "element": "dark",
+        "cost": 3,
+        "attack": 1400,
+        "defense": 400,
+        "description": "Stealth. Cannot be targeted by spells.",
+        "image": "/assets/cards/shadow_assassin.png",
+        "rarity": "epic",
+        "subType": "Rogue"
+    },
+    {
+        "id": "c015",
+        "name": "Ether Dracolich",
+        "type": "monster",
+        "element": "ether",
+        "cost": 9,
+        "attack": 4000,
+        "defense": 3500,
+        "description": "When destroyed, summon a 'Bone Shard' token.",
+        "image": "/assets/cards/ether_dracolich.png",
+        "rarity": "legendary",
+        "subType": "Undead Dragon"
+    },
+    {
+        "id": "c016",
+        "name": "Fireball",
+        "type": "spell",
+        "element": "fire",
+        "cost": 2,
+        "description": "Deal 1500 damage to any target.",
+        "image": "/assets/cards/fireball.png",
+        "rarity": "common"
+    },
+    {
+        "id": "c017",
+        "name": "Gust",
+        "type": "spell",
+        "element": "air",
+        "cost": 1,
+        "description": "Return an enemy monster to its owner's hand.",
+        "image": "/assets/cards/gust.png",
+        "rarity": "rare"
+    },
+    {
+        "id": "c018",
+        "name": "Dark Pact",
+        "type": "spell",
+        "element": "dark",
+        "cost": 1,
+        "description": "Draw 2 cards. Your hero takes 1000 damage.",
+        "image": "/assets/cards/dark_pact.png",
+        "rarity": "epic"
+    },
+    {
+        "id": "c019",
+        "name": "Holy Nova",
+        "type": "spell",
+        "element": "light",
+        "cost": 5,
+        "description": "Deal 1000 damage to all enemies. Restore 1000 HP to all allies.",
+        "image": "/assets/cards/holy_nova.png",
+        "rarity": "epic"
+    },
+    {
+        "id": "c020",
+        "name": "Mirror Shield",
+        "type": "trap",
+        "element": "light",
+        "cost": 3,
+        "description": "When attacked: Reflect all combat damage back to the attacker.",
+        "image": "/assets/cards/mirror_shield.png",
+        "rarity": "rare"
     }
 ]
